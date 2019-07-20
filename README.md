@@ -1,7 +1,9 @@
 # PipTUI
 Pip GUI in your terminal!
 
-![screenshot](https://user-images.githubusercontent.com/41646249/60841686-1690aa00-a1db-11e9-82ae-425c4ebdbb8c.png)
+![main](https://user-images.githubusercontent.com/41646249/61582508-8c2e3b80-ab34-11e9-8e53-a8439c0f2e04.png)
+![search](https://user-images.githubusercontent.com/41646249/61582525-a5cf8300-ab34-11e9-8724-fe09d8471e12.png)
+
 
 ### Installation
 
