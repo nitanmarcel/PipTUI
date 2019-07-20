@@ -6,7 +6,11 @@ def threaded(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         thread = Thread(target=func, args=args, kwargs=kwargs)
-        thread.start()
         wrapper.__thread__ = thread
+        try:
+            thread.start()
+        except KeyboardInterrupt:
+            thread.stop()
         return thread
+
     return wrapper

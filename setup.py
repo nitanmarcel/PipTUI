@@ -1,7 +1,5 @@
 from setuptools import find_packages, setup
 
-from pip_tui import __version__
-
 setup(
         name='PipTUI',
         version=__version__.__version__,
@@ -21,5 +19,5 @@ setup(
         ],
         keywords='pip, npyscreen, pip-gui',
         install_requires=['npyscreen', 'requests'],
-        entry_points={'console_scripts': ['pip_tui = pip_tui:main.main']}
+        entry_points={'console_scripts': ['pip_tui = pip_tui:app.main']}
 )

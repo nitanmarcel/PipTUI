@@ -1,5 +1,6 @@
-from npyscreen import apNPSApplicationEvents, StandardApp
 import collections
+
+from npyscreen import StandardApp, apNPSApplicationEvents
 
 
 class PipTuiEvents(object):
@@ -18,6 +19,7 @@ class PipTuiEvents(object):
                 pass
             counter += 1
 
+
 class PipTuiApp(StandardApp):
     def __init__(self):
         super(StandardApp, self).__init__()
@@ -25,6 +27,7 @@ class PipTuiApp(StandardApp):
         self.event_queues = {}
         self.initalize_application_event_queues()
         self.initialize_event_handling()
+
     def process_event_queues(self, max_events_per_queue=None):
         for queue in self.event_queues.values():
             try:

@@ -1,2 +1,3 @@
-from pip_tui.main import main
+from .app import main
+
 main()

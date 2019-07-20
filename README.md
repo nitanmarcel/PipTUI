@@ -17,6 +17,6 @@ pip_tui
 
 ### Shortcuts
 
+* Install package: `Ctrl-A`
 * Uninstall package: `Ctrl-R`
 * Update package: `Ctrl-U`
-* More to come!!..
