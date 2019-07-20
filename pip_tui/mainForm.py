@@ -27,12 +27,12 @@ class MainForm(FormBaseNew):
         y, x = self.useable_space()
 
         self.PkgBoxObj = self.add(PkgBox,
-                                  name="Installed Packages",
+                                  name="Packages",
                                   value=0, relx=1, max_width=x // 5, rely=2,
                                   max_height=-5)
 
         self.InfoBoxObj = self.add(
-            InfoBox, rely=2, relx=(
+            InfoBox, name='Description', rely=2, relx=(
                 x // 5) + 1, max_height=-5)
         self.SearchBoxObj = self.add(
             SearchBox,
@@ -43,7 +43,7 @@ class MainForm(FormBaseNew):
             max_height=-5,
         )
 
-        self.LogBoxObj = self.add(LogBox, relx=(
+        self.LogBoxObj = self.add(LogBox, name='Pip Log', relx=(
             x // 5) + 1, rely=-7, max_height=-5)
 
         self.action_controller = QueryPypi
