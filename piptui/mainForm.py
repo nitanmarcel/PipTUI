@@ -1,6 +1,6 @@
 import curses
 
-from npyscreen import FormBaseNew
+from .custom.customForm import FormBaseNewHinted
 
 from .infoBox import InfoBox
 from .logBox import LogBox
@@ -8,7 +8,7 @@ from .pkgBox import PkgBox
 from .searchBox import QueryPypi, SearchBox
 
 
-class MainForm(FormBaseNew):
+class MainForm(FormBaseNewHinted):
     def create(self):
         exit_handlers = {'^Q': lambda x: exit(0),
                          155: lambda x: exit(0),
