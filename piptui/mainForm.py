@@ -17,7 +17,8 @@ class MainForm(FormBaseNewHinted):
             '^R': lambda x: self.parentApp.switchForm("UNINSTALL"),
             '^U': lambda x: self.parentApp.switchForm("UPDATE"),
             '^O': lambda x: self.PkgBoxObj.open_in_browser(),
-            '^H': lambda x: self.PkgBoxObj.open_homepage()}
+            '^H': lambda x: self.PkgBoxObj.open_homepage(),
+            '^D': lambda x: self.show_details_form()}
 
         self.add_handlers(exit_handlers)
         self.add_handlers(action_handlers)
@@ -55,3 +56,7 @@ class MainForm(FormBaseNewHinted):
 
     def event_package_select(self, *args, **kwargs):
         self.InfoBoxObj.display_info()
+
+    def show_details_form(self, *args, **kwargs):
+        self.parentApp.getForm("PKG_INFO").update()
+        self.parentApp.switchForm("PKG_INFO")

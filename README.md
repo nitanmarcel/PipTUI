@@ -24,6 +24,7 @@ piptui
 * Update package: `Ctrl-U`
 * Open in browser: `Ctrl-O`
 * Open HomePage: `Ctrl-H`
+* Show Package Details: `Ctrl-D`
 
 
 

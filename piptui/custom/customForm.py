@@ -9,12 +9,12 @@ class FormBaseNewHinted(FormBaseNew):
 
     def draw_form(self):
         super(FormBaseNewHinted, self).draw_form()
-        menu_advert = '^A: Install\t\t^R: Uninstall\t\t^U: Update\t\t^O: Open in Browser\t\t^H: Open HomePage\t\t^Q: Quit'
+        menu_advert = '^A: Install\t^R: Uninstall\t^U: Update\t^O: Open in Browser\t^H: Open HomePage\t^D: Details\t^Q: Quit'
         if isinstance(menu_advert, bytes):
             menu_advert = menu_advert.decode('utf-8', 'replace')
         y, x = self.display_menu_advert_at()
         self.add_line(y, x,
                       menu_advert,
                       self.make_attributes_list(menu_advert, curses.A_NORMAL),
-                      self.columns - x - 1
+                      self.columns - x - 1,
                       )

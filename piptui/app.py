@@ -4,6 +4,7 @@ from .actionForms import InstallForm, UninstallForm, UpdateForm
 from .custom.apNPSApplicationEvents import PipTuiApp
 from .custom.customTheme import PipTuiTheme
 from .mainForm import MainForm
+from .pkgInfoForm import PkgInfoForm
 
 
 class App(PipTuiApp):
@@ -16,6 +17,7 @@ class App(PipTuiApp):
             "UNINSTALL", UninstallForm, lines=5, columns=20)
         self.UpdateForm = self.addForm(
             "UPDATE", UpdateForm, lines=5, columns=20)
+        self.PkgInfoForm = self.addForm('PKG_INFO',PkgInfoForm)
 
 
 def main():
