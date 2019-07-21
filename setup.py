@@ -26,5 +26,5 @@ setup(
         ],
         keywords='pip, npyscreen, pip-gui',
         install_requires=requirements,
-        entry_points={'console_scripts': ['pip_tui = pip_tui:app.main']}
+        entry_points={'console_scripts': ['piptui = piptui:app.main']}
 )
