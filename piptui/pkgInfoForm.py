@@ -5,16 +5,18 @@ import requests
 from . import INSTALLED
 from .run_threaded import threaded
 from npyscreen import ActionForm, TitleMultiLine, TitleText
+from .custom.customForm import ActionFormHinted
 
 
-class PkgInfoForm(ActionForm):
+class PkgInfoForm(ActionFormHinted):
     def create(self):
         self.name = 'Package Info!'
-        exit_handlers = {'^Q': lambda x: exit(0),
-                         155: lambda x: exit(0),
-                         curses.ascii.ESC: lambda x: exit(0)}
+        exit_handlers = {'^Q': lambda x: self.parentApp.switchForm('MAIN'),
+                         155: lambda x: self.parentApp.switchForm('MAIN'),
+                         curses.ascii.ESC: lambda x: self.parentApp.switchForm('MAIN')}
 
         self.add_handlers(exit_handlers)
+        self.add_handlers({'^A': lambda x: self.parentApp.switchForm('INSTALL_VERSION')})
 
         self.pkg_name = self.add(
             TitleText,
@@ -57,7 +59,8 @@ class PkgInfoForm(ActionForm):
             for package in INSTALLED:
                 if pkg == package.split()[0]:
                     self.location.value = site.getusersitepackages()
-            self.releases.values = [release for release in releases.keys()]
+            self.releases.values = [release for release in releases]
+            self.releases.value = 0
         else:
             print('\a')
         self.display()
