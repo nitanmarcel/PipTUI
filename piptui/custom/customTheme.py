@@ -6,7 +6,11 @@ from pathlib import Path
 from npyscreen import ThemeManager
 
 
+TRANSPARENT = os.environ.get('PIPTUI_TRANSPARENT', False)
+
 class PipTuiThemeBase(ThemeManager):
+
+
     default_colors = {
         'DEFAULT': 'WHITE_BLACK',
         'FORMDEFAULT': 'WHITE_BLACK',
@@ -48,6 +52,20 @@ class PipTuiThemeBase(ThemeManager):
         ('RED_WHITE', curses.COLOR_RED, curses.COLOR_WHITE),
         ('YELLOW_WHITE', curses.COLOR_YELLOW, curses.COLOR_WHITE)
     )
+    if str(TRANSPARENT).lower() == 'true':
+        _colors_to_define = _colors_to_define + (('BLACK_ON_DEFAULT', curses.COLOR_BLACK, -1),
+                                                 ('WHITE_ON_DEFAULT', curses.COLOR_WHITE, -1),
+                                                 ('BLUE_ON_DEFAULT', curses.COLOR_BLUE, -1),
+                                                 ('CYAN_ON_DEFAULT', curses.COLOR_CYAN, -1),
+                                                 ('GREEN_ON_DEFAULT', curses.COLOR_GREEN, -1),
+                                                 ('MAGENTA_ON_DEFAULT', curses.COLOR_MAGENTA, -1),
+                                                 ('RED_ON_DEFAULT', curses.COLOR_RED, -1),
+                                                 ('YELLOW_ON_DEFAULT', curses.COLOR_YELLOW, -1))
+
+    def __init__(self, *args, **kwargs):
+        if str(TRANSPARENT).lower() == 'true':
+            curses.use_default_colors()
+        super(PipTuiThemeBase, self).__init__(*args, **kwargs)
 
 
 class PipTuiTheme(PipTuiThemeBase):
