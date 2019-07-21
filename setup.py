@@ -1,4 +1,5 @@
 from setuptools import find_packages, setup
+from piptui import __version__
 
 requirements = ['npyscreen', 'requests', 'windows-curses; sys_platform == "win32"']
 
