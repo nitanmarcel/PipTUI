@@ -3,7 +3,6 @@ import pkg_resources
 from .run_threaded import threaded
 
 INSTALLED = []
-PYPI = []
 
 
 @threaded

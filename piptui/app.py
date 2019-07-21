@@ -1,10 +1,13 @@
 from .actionForms import InstallForm, UninstallForm, UpdateForm
 from .custom.apNPSApplicationEvents import PipTuiApp
+from .custom.customTheme import PipTuiTheme
 from .mainForm import MainForm
+from npyscreen import setTheme
 
 
 class App(PipTuiApp):
     def onStart(self):
+        setTheme(PipTuiTheme)
         self.MainForm = self.addForm("MAIN", MainForm)
         self.InstallForm = self.addForm(
             "INSTALL", InstallForm, lines=5, columns=20)

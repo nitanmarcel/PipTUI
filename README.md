@@ -30,3 +30,29 @@ piptui
 This app only works if `pip` is installed and it's not a pip alternative, it's just GUI wrapper for the pip commands! 
 
 If you're using other ways to install python packages some changes should be made in your end. A little example is to set a pip alias if you're using apps like `pipx` to install python packages!
+
+
+### Theming
+
+
+To theme the app create a json file in `your home dir/.piptui/theme.json` then copy and edit the content of `theme_example.json`
+
+
+Available Colors:
+
+* BLACK_RED
+* MAGENTA_BLACK
+* BLUE_BLACK
+* YELLOW_BLACK
+* BLACK_YELLOW
+* BLACK_GREEN
+* RED_BLACK
+* YELLOW_WHITE
+* CYAN_BLACK
+* GREEN_WHITE
+* RED_WHITE
+* CYAN_WHITE
+* BLUE_WHITE
+* GREEN_BLACK
+* MAGENTA_WHITE
+* BLACK_WHITE
