@@ -4,6 +4,8 @@ from npyscreen import FormBaseNew, ActionForm
 
 
 class FormBaseNewHinted(FormBaseNew):
+    FRAMED = False
+
     def display_menu_advert_at(self):
         return self.lines - 1, 1
 

@@ -30,11 +30,11 @@ class MainForm(FormBaseNewHinted):
 
         self.PkgBoxObj = self.add(PkgBox,
                                   name="Packages",
-                                  value=0, relx=1, max_width=x // 5, rely=2,
+                                  value=0, relx=1, max_width=x // 5, rely=0,
                                   max_height=-5)
 
         self.InfoBoxObj = self.add(
-            InfoBox, name='Description', rely=2, relx=(
+            InfoBox, name='Description', rely=0, relx=(
                 x // 5) + 1, max_height=-5)
         self.SearchBoxObj = self.add(
             SearchBox,
@@ -46,7 +46,7 @@ class MainForm(FormBaseNewHinted):
         )
 
         self.LogBoxObj = self.add(LogBox, name='Pip Log', relx=(
-            x // 5) + 1, rely=-7, max_height=-5)
+            x // 5) + 1, rely=-7, max_height=0)
 
         self.action_controller = QueryPypi
 
