@@ -58,10 +58,6 @@ Available Colors:
 * GREEN_BLACK
 * MAGENTA_WHITE
 * BLACK_WHITE
-
-
-Export `PIPTUI_TRANSPARENT=True` to your env variables and enable transparent color sets:
-
 * CYAN_ON_DEFAULT
 * BLUE_ON_DEFAULT
 * WHITE_ON_DEFAULT
