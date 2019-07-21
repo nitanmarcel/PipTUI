@@ -1,7 +1,6 @@
 import curses
 
 from .custom.customForm import FormBaseNewHinted
-
 from .infoBox import InfoBox
 from .logBox import LogBox
 from .pkgBox import PkgBox

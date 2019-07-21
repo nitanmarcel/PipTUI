@@ -1,8 +1,9 @@
-from npyscreen import BoxTitle, Event
-from . import INSTALLED
+import webbrowser
 
 import requests
-import webbrowser
+from npyscreen import BoxTitle, Event
+
+from . import INSTALLED
 
 
 class PkgBox(BoxTitle):

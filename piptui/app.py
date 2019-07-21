@@ -1,8 +1,9 @@
+from npyscreen import setTheme
+
 from .actionForms import InstallForm, UninstallForm, UpdateForm
 from .custom.apNPSApplicationEvents import PipTuiApp
 from .custom.customTheme import PipTuiTheme
 from .mainForm import MainForm
-from npyscreen import setTheme
 
 
 class App(PipTuiApp):

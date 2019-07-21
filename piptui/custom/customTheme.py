@@ -5,8 +5,15 @@ from pathlib import Path
 
 from npyscreen import ThemeManager
 
-
-TRANSPARENT_KEYS = ['GREEN_ON_DEFAULT', 'BLUE_ON_DEFAULT', 'BLACK_ON_DEFAULT', 'CYAN_ON_DEFAULT', 'MAGENTA_ON_DEFAULT', 'YELLOW_ON_DEFAULT', 'WHITE_ON_DEFAULT', 'RED_ON_DEFAULT']
+TRANSPARENT_KEYS = [
+    'GREEN_ON_DEFAULT',
+    'BLUE_ON_DEFAULT',
+    'BLACK_ON_DEFAULT',
+    'CYAN_ON_DEFAULT',
+    'MAGENTA_ON_DEFAULT',
+    'YELLOW_ON_DEFAULT',
+    'WHITE_ON_DEFAULT',
+    'RED_ON_DEFAULT']
 HAS_TRANSPARENT = False
 DEFAULT_COLORS = {}
 
@@ -17,10 +24,11 @@ if os.path.isfile(home_dir + theme_json):
         DEFAULT_COLORS = json.load(theme_data)
 
 
-HAS_TRANSPARENT = any(color in DEFAULT_COLORS.values() for color in TRANSPARENT_KEYS)
+HAS_TRANSPARENT = any(color in DEFAULT_COLORS.values()
+                      for color in TRANSPARENT_KEYS)
+
 
 class PipTuiTheme(ThemeManager):
-
 
     default_colors = {
         'DEFAULT': 'WHITE_BLACK',
