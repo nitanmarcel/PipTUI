@@ -4,7 +4,7 @@ import sys
 
 
 requirements = [['npyscreen', 'requests', ]]
-if 'win' in sys.platform:
+if sys.platform == 'win32':
     requirements = [requirements[0] + ['windows-curses']]
 
 setup(
