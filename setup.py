@@ -1,5 +1,5 @@
 from setuptools import find_packages, setup
-from pip_tui import __version__
+from piptui import __version__
 import sys
 
 
