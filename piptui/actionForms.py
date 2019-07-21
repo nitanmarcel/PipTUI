@@ -96,4 +96,4 @@ class InstallVersionForm(ActionForm):
         self.parentApp.switchForm('MAIN')
 
     def on_cancel(self):
-        self.parentApp.switchForm('MAIN')
+        self.parentApp.switchForm('PKG_INFO')
