@@ -16,7 +16,9 @@ class MainForm(FormBaseNewHinted):
         action_handlers = {
             '^A': lambda x: self.parentApp.switchForm("INSTALL"),
             '^R': lambda x: self.parentApp.switchForm("UNINSTALL"),
-            '^U': lambda x: self.parentApp.switchForm("UPDATE")}
+            '^U': lambda x: self.parentApp.switchForm("UPDATE"),
+            '^O': lambda x: self.PkgBoxObj.open_in_browser(),
+            '^H': lambda x: self.PkgBoxObj.open_homepage()}
 
         self.add_handlers(exit_handlers)
         self.add_handlers(action_handlers)

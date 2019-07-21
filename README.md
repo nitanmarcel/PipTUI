@@ -22,6 +22,8 @@ piptui
 * Install package: `Ctrl-A`
 * Uninstall package: `Ctrl-R`
 * Update package: `Ctrl-U`
+* Open in browser: `Ctrl-O`
+* Open HomePage: `Ctrl-H`
 
 
 
