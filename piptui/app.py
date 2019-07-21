@@ -5,6 +5,7 @@ from .custom.apNPSApplicationEvents import PipTuiApp
 from .custom.customTheme import PipTuiTheme
 from .mainForm import MainForm
 from .pkgInfoForm import PkgInfoForm
+from .updater import check_update
 
 
 class App(PipTuiApp):
@@ -23,6 +24,7 @@ class App(PipTuiApp):
 
 
 def main():
+    check_update()
     App().run()
 
 
