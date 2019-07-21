@@ -14,7 +14,7 @@ pip3 install PipTUI
 
 ### Running it:
 ```bash
-pip_tui
+piptui
 ```
 
 ### Shortcuts
