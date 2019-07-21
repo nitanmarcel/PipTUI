@@ -1,11 +1,5 @@
 from setuptools import find_packages, setup
 from piptui import __version__
-import sys
-
-
-requirements = [['npyscreen', 'requests', ]]
-if sys.platform == 'win32':
-    requirements = [requirements[0] + ['windows-curses']]
 
 setup(
         name='PipTUI',
@@ -25,6 +19,6 @@ setup(
                 'Programming Language :: Python :: 3.7'
         ],
         keywords='pip, npyscreen, pip-gui',
-        install_requires=requirements,
+        install_requires=open("requirements.txt").readlines(),
         entry_points={'console_scripts': ['piptui = piptui:app.main']}
 )
