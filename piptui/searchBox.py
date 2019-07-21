@@ -41,6 +41,9 @@ class QueryPypi:
             value.parent.PkgBoxObj.update()
         else:
             query_pypi(mainbox=value.parent.PkgBoxObj, to_query=value.value)
+            value.parent.PkgBoxObj.value = 0
+            value.parent.PkgBoxObj.update()
+            value.parent.InfoBoxObj.display_info()
 
 
 def query_pypi(mainbox, to_query):
