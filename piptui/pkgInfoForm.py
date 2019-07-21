@@ -1,6 +1,8 @@
 import curses
+import site
 
 import requests
+from . import INSTALLED
 from npyscreen import ActionForm, TitleMultiLine, TitleText
 
 
@@ -17,10 +19,14 @@ class PkgInfoForm(ActionForm):
             TitleText,
             name='Package Name:',
             editable=False)
-        self.author = self.add(TitleText, name='Author:', editable=False)
         self.version = self.add(TitleText, name='Version:', editable=False)
         self.size = self.add(TitleText, name='Size:', editable=False)
+        self.summary = self.add(TitleText, name='Summary:', editable=False)
+        self.home_page = self.add(TitleText, name='Home-Page:', editable=False)
+        self.author = self.add(TitleText, name='Author:', editable=False)
+        self.author_email = self.add(TitleText, name='Author Email:', editable=False)
         self.license = self.add(TitleText, name='License:', editable=False)
+        self.location = self.add(TitleText, name='Location:', editable=False)
         self._new_line = self.add(TitleText, name='\n', editable=False)
         self.releases = self.add(
             TitleMultiLine,
@@ -36,16 +42,21 @@ class PkgInfoForm(ActionForm):
         if request.status_code == 200:
             js_data = request.json()
             info = js_data.get('info')
+            releases = js_data.get('releases', '')
 
             self.pkg_name.value = pkg
-            self.author.value = info.get('author', '')
             self.version.value = info.get('version', '')
-
-            releases = js_data.get('releases', '')
             self.size.value = self.get_max_release_size(releases)
-            self.license.value = info.get('license', '')
-            self.releases.values = [release for release in releases.keys()]
+            self.summary.value = info.get('summary', '')
+            self.home_page.value = info.get('home_page', '')
+            self.author.value = info.get('author', '')
+            self.author_email.value = info.get('author_email', '')
 
+            self.license.value = info.get('license', '')
+            for package in INSTALLED:
+                if pkg == package.split()[0]:
+                    self.location.value = site.getusersitepackages()
+            self.releases.values = [release for release in releases.keys()]
         else:
             print('\a')
         self.display()
