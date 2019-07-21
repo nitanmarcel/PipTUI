@@ -3,6 +3,7 @@ import site
 
 import requests
 from . import INSTALLED
+from .run_threaded import threaded
 from npyscreen import ActionForm, TitleMultiLine, TitleText
 
 
@@ -33,7 +34,7 @@ class PkgInfoForm(ActionForm):
             name='Releases:',
             max_height=5,
             scroll_exit=True)
-
+    @threaded
     def update(self):
         current_selection = self.parentApp.MainForm.PkgBoxObj.value
         pkg = self.parentApp.MainForm.PkgBoxObj.values[current_selection].split()[
