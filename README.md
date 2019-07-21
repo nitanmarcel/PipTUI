@@ -22,3 +22,11 @@ pip_tui
 * Install package: `Ctrl-A`
 * Uninstall package: `Ctrl-R`
 * Update package: `Ctrl-U`
+
+
+
+### DISCLAIMER
+
+This app only works if `pip` is installed and it's not a pip alternative, it's just GUI wrapper for the pip commands! 
+
+If you're using other ways to install python packages some changes should be made in your end. A little example is to set a pip alias if you're using apps like `pipx` to install python packages!
