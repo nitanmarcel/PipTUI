@@ -1,5 +1,5 @@
 import requests
-
+import re
 from npyscreen import setTheme
 
 from .actionForms import InstallForm, InstallVersionForm, UninstallForm, UpdateForm, UpdateAppForm
@@ -28,14 +28,19 @@ class App(PipTuiApp):
 
         self.UpdateAppForm = self.addForm('APP_UPDATE', UpdateAppForm, lines=5, columns=20)
         self.check_for_update()
+
     @threaded
     def check_for_update(self):
         request = requests.get('https://pypi.org/pypi/PipTUI/json')
         if request.status_code == 200:
             json_data = request.json()
-            self.release = max(json_data.get('releases'))
+            self.release = max(json_data.get('releases'), key=self.major_minor_micro)
             if __version__.__version__ != self.release:
                 self.switchForm("APP_UPDATE")
+    @threaded
+    def major_minor_micro(version):
+        major, minor, micro = re.search('(\d+)\.(\d+)\.(\d+)', version).groups()
+        return int(major), int(minor), int(micro)
 
 def main():
     App().run()
