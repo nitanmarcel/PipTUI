@@ -34,11 +34,11 @@ class App(PipTuiApp):
         request = requests.get('https://pypi.org/pypi/PipTUI/json')
         if request.status_code == 200:
             json_data = request.json()
-            self.release = max(json_data.get('releases'), key=self.major_minor_micro)
+            self.release = max(list(json_data.get('releases')), key=self.major_minor_micro)
             if __version__.__version__ != self.release:
                 self.switchForm("APP_UPDATE")
-    @threaded
-    def major_minor_micro(version):
+
+    def major_minor_micro(self, version):
         major, minor, micro = re.search('(\d+)\.(\d+)\.(\d+)', version).groups()
         return int(major), int(minor), int(micro)
 
