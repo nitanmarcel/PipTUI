@@ -109,6 +109,34 @@ class LogBox(BoxTitle):
                     pass
                 break
 
+    def update_app(self):
+        self.refresh()
+        release = self.parent.parentApp.release
+        proc = subprocess.Popen([sys.executable,
+                                 '-m',
+                                 'pip',
+                                 'install',
+                                 'PipTUI==' + release,
+                                 '--user'],
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE)
+        while True:
+            stdout = proc.stdout.readline()
+            stderr = proc.stderr.readline()
+            if stdout:
+                self.values.append(stdout.decode().strip())
+                self.update()
+            if stderr:
+                self.values.append(stderr.decode().strip())
+                self.update()
+            if not proc.poll() and not stdout and not stderr:
+                try:
+                    self.uninstall_pkg.__thread__.join()
+                except BaseException:
+                    pass
+                break
+
+
     def refresh(self):
         self.values = []
         self.update()

@@ -4,6 +4,7 @@ from npyscreen import ActionForm
 
 
 class UninstallForm(ActionForm):
+    OK_BUTTON_TEXT = 'Yes'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -28,6 +29,7 @@ class UninstallForm(ActionForm):
 
 
 class UpdateForm(ActionForm):
+    OK_BUTTON_TEXT = 'Yes'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -52,6 +54,7 @@ class UpdateForm(ActionForm):
 
 
 class InstallForm(ActionForm):
+    OK_BUTTON_TEXT = 'Yes'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -75,6 +78,7 @@ class InstallForm(ActionForm):
         self.parentApp.switchForm('MAIN')
 
 class InstallVersionForm(ActionForm):
+    OK_BUTTON_TEXT = 'Yes'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -97,3 +101,26 @@ class InstallVersionForm(ActionForm):
 
     def on_cancel(self):
         self.parentApp.switchForm('PKG_INFO')
+
+
+
+class UpdateAppForm(ActionForm):
+    OK_BUTTON_TEXT = 'Yes'
+    def create(self):
+        y, x = self.parentApp.MainForm.useable_space()
+        self.show_atx = x // 2 - 10
+        self.show_aty = y // 2 - 5
+        self.name = "Update App??"
+
+        exit_handlers = {'^Q': lambda: exit(0),
+                         155: lambda: exit(0),
+                         curses.ascii.ESC: lambda: exit(0)}
+        self.add_handlers(exit_handlers)
+        self.display()
+
+    def on_ok(self):
+        self.parentApp.MainForm.LogBoxObj.update_app()
+        self.parentApp.switchForm('MAIN')
+
+    def on_cancel(self):
+        self.parentApp.switchForm('MAIN')
