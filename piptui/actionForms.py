@@ -4,12 +4,15 @@ from npyscreen import ActionForm
 
 
 class UninstallForm(ActionForm):
-    OK_BUTTON_TEXT = 'Yes'
+    CANCEL_BUTTON_BR_OFFSET = (2, 45)
+    OK_BUTTON_BR_OFFSET = (2, 5)
+    CANCEL_BUTTON_TEXT = 'Cancel'
+    OK_BUTTON_TEXT = 'Uninstall'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
         self.show_aty = y // 2 - 5
-        self.name = "Uninstall Pkg?"
+        self.name = "Uninstall Package?"
 
         exit_handlers = {'^Q': lambda: exit(0),
                          155: lambda: exit(0),
@@ -29,12 +32,15 @@ class UninstallForm(ActionForm):
 
 
 class UpdateForm(ActionForm):
-    OK_BUTTON_TEXT = 'Yes'
+    CANCEL_BUTTON_BR_OFFSET = (2, 45)
+    OK_BUTTON_BR_OFFSET = (2, 5)
+    CANCEL_BUTTON_TEXT = 'Cancel'
+    OK_BUTTON_TEXT = 'Update'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
         self.show_aty = y // 2 - 5
-        self.name = "Update Pkg?"
+        self.name = "Update Package?"
 
         exit_handlers = {'^Q': lambda: exit(0),
                          155: lambda: exit(0),
@@ -54,12 +60,15 @@ class UpdateForm(ActionForm):
 
 
 class InstallForm(ActionForm):
-    OK_BUTTON_TEXT = 'Yes'
+    CANCEL_BUTTON_BR_OFFSET = (2, 45)
+    OK_BUTTON_BR_OFFSET = (2, 5)
+    CANCEL_BUTTON_TEXT = 'Cancel'
+    OK_BUTTON_TEXT = 'Install'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
         self.show_aty = y // 2 - 5
-        self.name = "Install Pkg?"
+        self.name = "Install Release?"
 
         exit_handlers = {'^Q': lambda: exit(0),
                          155: lambda: exit(0),
@@ -78,12 +87,15 @@ class InstallForm(ActionForm):
         self.parentApp.switchForm('MAIN')
 
 class InstallVersionForm(ActionForm):
-    OK_BUTTON_TEXT = 'Yes'
+    CANCEL_BUTTON_BR_OFFSET = (2, 45)
+    OK_BUTTON_BR_OFFSET = (2, 5)
+    CANCEL_BUTTON_TEXT = 'Cancel'
+    OK_BUTTON_TEXT = 'Install'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
         self.show_aty = y // 2 - 5
-        self.name = "Install Pkg?"
+        self.name = "Install Package?"
 
         exit_handlers = {'^Q': lambda: exit(0),
                          155: lambda: exit(0),
@@ -105,12 +117,15 @@ class InstallVersionForm(ActionForm):
 
 
 class UpdateAppForm(ActionForm):
-    OK_BUTTON_TEXT = 'Yes'
+    CANCEL_BUTTON_BR_OFFSET = (2, 45)
+    OK_BUTTON_BR_OFFSET = (2, 5)
+    CANCEL_BUTTON_TEXT = 'Cancel'
+    OK_BUTTON_TEXT = 'Update'
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
         self.show_aty = y // 2 - 5
-        self.name = "Update App??"
+        self.name = "Update App?"
 
         exit_handlers = {'^Q': lambda: exit(0),
                          155: lambda: exit(0),

@@ -17,16 +17,16 @@ class App(PipTuiApp):
         self.release = __version__.__version__
         self.MainForm = self.addForm("MAIN", MainForm)
         self.InstallForm = self.addForm(
-            "INSTALL", InstallForm, lines=5, columns=20)
+            "INSTALL", InstallForm, lines=6, columns=26)
         self.InstallVersionForm = self.addForm(
-            "INSTALL_VERSION", InstallVersionForm, lines=5, columns=20)
+            "INSTALL_VERSION", InstallVersionForm, lines=6, columns=26)
         self.UninstallForm = self.addForm(
-            "UNINSTALL", UninstallForm, lines=5, columns=20)
+            "UNINSTALL", UninstallForm, lines=6, columns=26)
         self.UpdateForm = self.addForm(
-            "UPDATE", UpdateForm, lines=5, columns=20)
+            "UPDATE", UpdateForm, lines=6, columns=26)
         self.PkgInfoForm = self.addForm('PKG_INFO',PkgInfoForm)
 
-        self.UpdateAppForm = self.addForm('APP_UPDATE', UpdateAppForm, lines=5, columns=20)
+        self.UpdateAppForm = self.addForm('APP_UPDATE', UpdateAppForm, lines=6, columns=26)
         self.check_for_update()
 
     @threaded
