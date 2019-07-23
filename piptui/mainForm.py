@@ -50,7 +50,7 @@ class MainForm(FormBaseNewHinted):
 
         self.action_controller = QueryPypi
 
-        self.help = open('README.md').read()
+
         self.display()
         self.PkgBoxObj.create()
         self.InfoBoxObj.create()
