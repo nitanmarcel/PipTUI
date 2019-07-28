@@ -1,0 +1,18 @@
+{
+  "DEFAULT"     : "BLACK_WHITE",
+  "FORMDEFAULT" : "BLACK_WHITE",
+  "NO_EDIT"     : "BLUE_WHITE",
+  "STANDOUT"    : "CYAN_WHITE",
+  "CURSOR"      : "BLACK_WHITE",
+  "CURSOR_INVERSE": "WHITE_BLACK",
+  "LABEL"       : "RED_WHITE",
+  "LABELBOLD"   : "BLACK_WHITE",
+  "CONTROL"     : "BLUE_WHITE",
+  "WARNING"     : "RED_WHITE",
+  "CRITICAL"    : "BLACK_RED",
+  "GOOD"        : "GREEN_BLACK",
+  "GOODHL"      : "GREEN_WHITE",
+  "VERYGOOD"    : "WHITE_GREEN",
+  "CAUTION"     : "YELLOW_WHITE",
+  "CAUTIONHL"   : "BLACK_YELLOW"
+}
