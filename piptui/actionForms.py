@@ -8,6 +8,7 @@ class UninstallForm(ActionForm):
     OK_BUTTON_BR_OFFSET = (2, 5)
     CANCEL_BUTTON_TEXT = 'Cancel'
     OK_BUTTON_TEXT = 'Uninstall'
+
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -36,6 +37,7 @@ class UpdateForm(ActionForm):
     OK_BUTTON_BR_OFFSET = (2, 5)
     CANCEL_BUTTON_TEXT = 'Cancel'
     OK_BUTTON_TEXT = 'Update'
+
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -64,6 +66,7 @@ class InstallForm(ActionForm):
     OK_BUTTON_BR_OFFSET = (2, 5)
     CANCEL_BUTTON_TEXT = 'Cancel'
     OK_BUTTON_TEXT = 'Install'
+
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -86,11 +89,13 @@ class InstallForm(ActionForm):
     def on_cancel(self):
         self.parentApp.switchForm('MAIN')
 
+
 class InstallVersionForm(ActionForm):
     CANCEL_BUTTON_BR_OFFSET = (2, 45)
     OK_BUTTON_BR_OFFSET = (2, 5)
     CANCEL_BUTTON_TEXT = 'Cancel'
     OK_BUTTON_TEXT = 'Install'
+
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10
@@ -115,12 +120,12 @@ class InstallVersionForm(ActionForm):
         self.parentApp.switchForm('PKG_INFO')
 
 
-
 class UpdateAppForm(ActionForm):
     CANCEL_BUTTON_BR_OFFSET = (2, 45)
     OK_BUTTON_BR_OFFSET = (2, 5)
     CANCEL_BUTTON_TEXT = 'Cancel'
     OK_BUTTON_TEXT = 'Update'
+
     def create(self):
         y, x = self.parentApp.MainForm.useable_space()
         self.show_atx = x // 2 - 10

@@ -19,6 +19,7 @@ piptui
 
 ### Shortcuts
 
+* Open settings: `F1`
 * Install package: `Ctrl-A`
 * Uninstall package: `Ctrl-R`
 * Update package: `Ctrl-U`
@@ -38,7 +39,7 @@ If you're using other ways to install python packages some changes should be mad
 ### Theming
 
 
-To theme the app create a json file in `your home dir/.piptui/theme.json` then copy and edit the content of `theme_example.json`
+To add new themes check `theme_example.json` and add the json file in the `$HOME.piptui/themes` folder.
 
 
 Available Colors:

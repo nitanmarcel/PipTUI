@@ -1,1 +1,0 @@
-Rename the chosen theme to `theme.json` and put them in `your home dir/.piptui/`

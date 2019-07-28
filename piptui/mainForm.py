@@ -18,7 +18,8 @@ class MainForm(FormBaseNewHinted):
             '^U': lambda x: self.parentApp.switchForm("UPDATE"),
             '^O': lambda x: self.PkgBoxObj.open_in_browser(),
             '^H': lambda x: self.PkgBoxObj.open_homepage(),
-            '^D': lambda x: self.show_details_form()}
+            '^D': lambda x: self.show_details_form(),
+            curses.KEY_F1: lambda x: self.parentApp.switchForm("SETTINGS")}
 
         self.add_handlers(exit_handlers)
         self.add_handlers(action_handlers)
@@ -49,7 +50,6 @@ class MainForm(FormBaseNewHinted):
             x // 5) + 1, rely=-7, max_height=0)
 
         self.action_controller = QueryPypi
-
 
         self.display()
         self.PkgBoxObj.create()

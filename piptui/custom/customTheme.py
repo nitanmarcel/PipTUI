@@ -1,7 +1,6 @@
 import curses
 import json
-import os
-from pathlib import Path
+from piptui.settings import get_config_value, THEME_FOLDER
 
 from npyscreen import ThemeManager
 
@@ -14,14 +13,8 @@ TRANSPARENT_KEYS = [
     'YELLOW_ON_DEFAULT',
     'WHITE_ON_DEFAULT',
     'RED_ON_DEFAULT']
+DEFAULT_COLORS = json.load(open(THEME_FOLDER + get_config_value('THEME')))
 HAS_TRANSPARENT = False
-DEFAULT_COLORS = {}
-
-home_dir = str(Path.home())
-theme_json = '/.piptui/theme.json'
-if os.path.isfile(home_dir + theme_json):
-    with open(home_dir + theme_json) as theme_data:
-        DEFAULT_COLORS = json.load(theme_data)
 
 
 HAS_TRANSPARENT = any(color in DEFAULT_COLORS.values()

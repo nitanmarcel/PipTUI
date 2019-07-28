@@ -5,6 +5,7 @@ import requests
 from npyscreen import BoxTitle
 
 from .run_threaded import threaded
+from.settings import get_config_value
 
 
 class LogBox(BoxTitle):
@@ -45,13 +46,15 @@ class LogBox(BoxTitle):
     def update_pkg(self, pkg, current_selection):
         updated = False
         self.refresh()
-        proc = subprocess.Popen([sys.executable,
-                                 '-m',
-                                 'pip',
-                                 'install',
-                                 pkg,
-                                 '--upgrade',
-                                 '--user'],
+        cmd = [sys.executable,
+               '-m',
+               'pip',
+               'install',
+               pkg,
+               '--upgrade']
+        if get_config_value('use_user_arg', as_bool=True) is True:
+            cmd.append('--user')
+        proc = subprocess.Popen(cmd,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
         while True:
@@ -85,12 +88,15 @@ class LogBox(BoxTitle):
     def install_pkg(self, pkg, current_selection):
         global INSTALLED
         self.refresh()
-        proc = subprocess.Popen([sys.executable,
-                                 '-m',
-                                 'pip',
-                                 'install',
-                                 pkg,
-                                 '--user'],
+        cmd = [sys.executable,
+               '-m',
+               'pip',
+               'install',
+               pkg,
+               ]
+        if get_config_value('use_user_arg', as_bool=True) is True:
+            cmd.append('--user')
+        proc = subprocess.Popen(cmd,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
         while True:
@@ -112,12 +118,14 @@ class LogBox(BoxTitle):
     def update_app(self):
         self.refresh()
         release = self.parent.parentApp.release
-        proc = subprocess.Popen([sys.executable,
-                                 '-m',
-                                 'pip',
-                                 'install',
-                                 'PipTUI==' + release,
-                                 '--user'],
+        cmd = [sys.executable,
+               '-m',
+               'pip',
+               'install',
+               'PipTUI==' + release]
+        if get_config_value('use_user_arg', as_bool=True) is True:
+            cmd.append('--user')
+        proc = subprocess.Popen(cmd,
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE)
         while True:
@@ -135,7 +143,6 @@ class LogBox(BoxTitle):
                 except BaseException:
                     pass
                 break
-
 
     def refresh(self):
         self.values = []

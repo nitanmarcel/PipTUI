@@ -20,6 +20,8 @@ class FormBaseNewHinted(FormBaseNew):
                       self.make_attributes_list(menu_advert, curses.A_NORMAL),
                       self.columns - x - 1,
                       )
+
+
 class ActionFormHinted(FormBaseNew):
     def display_menu_advert_at(self):
         return self.lines - 1, 1
@@ -35,4 +37,3 @@ class ActionFormHinted(FormBaseNew):
                       self.make_attributes_list(menu_advert, curses.A_NORMAL),
                       self.columns - x - 1,
                       )
-
