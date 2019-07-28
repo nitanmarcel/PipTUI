@@ -13,7 +13,7 @@ TRANSPARENT_KEYS = [
     'YELLOW_ON_DEFAULT',
     'WHITE_ON_DEFAULT',
     'RED_ON_DEFAULT']
-DEFAULT_COLORS = json.load(open(THEME_FOLDER + get_config_value('THEME')))
+DEFAULT_COLORS = json.load(open(THEME_FOLDER + get_config_value('theme')))
 HAS_TRANSPARENT = False
 
 
