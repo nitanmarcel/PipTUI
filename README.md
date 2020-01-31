@@ -69,3 +69,11 @@ Available Colors:
 * YELLOW_ON_DEFAULT
 * RED_ON_DEFAULT
 
+### Buy me a beer:
+
+ - PayPal: https://www.paypal.me/marcelalexandrunitan?locale.x=en_US
+ - Revolut: Hit me on telegram with a payment link: https://t.me/nitanmarcel
+ 
+ 
+ 
+ ### License: MIT
