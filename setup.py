@@ -4,7 +4,7 @@ from pathlib import Path
 import distutils.core
 import os
 
-requirements = ['npyscreen', 'requests', 'windows-curses; sys_platform == "win32"']
+requirements = ['npyscreen @ https://github.com/npcole/npyscreen', 'requests', 'windows-curses; sys_platform == "win32"']
 
 
 def setup(**attrs):
