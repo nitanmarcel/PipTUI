@@ -33,7 +33,7 @@ class QueryPypi:
         if value.value == '':
             value.parent.PkgBoxObj.values = INSTALLED
             value.parent.PkgBoxObj.update()
-
+    @threaded
     def process_command_live(self, value, **kwargs):
         packages = []
         if not value.value:
