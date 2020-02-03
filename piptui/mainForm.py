@@ -19,6 +19,7 @@ class MainForm(FormBaseNewHinted):
             '^O': lambda x: self.PkgBoxObj.open_in_browser(),
             '^H': lambda x: self.PkgBoxObj.open_homepage(),
             '^D': lambda x: self.show_details_form(),
+            '^S': lambda x: self.SearchBoxObj.edit(),
             curses.KEY_F1: lambda x: self.parentApp.switchForm("SETTINGS")}
 
         self.add_handlers(exit_handlers)

@@ -11,7 +11,7 @@ class FormBaseNewHinted(FormBaseNew):
 
     def draw_form(self):
         super(FormBaseNewHinted, self).draw_form()
-        menu_advert = '^A: Install\t^R: Uninstall\t^U: Update\t^O: Open in Browser\t^H: Open HomePage\t^D: Details\t^Q: Quit'
+        menu_advert = '^A: Install\t^R: Uninstall\t^U: Update\t^S: Search\t^O: Open in Browser\t^H: Open HomePage\t^D: Details\t^Q: Quit'
         if isinstance(menu_advert, bytes):
             menu_advert = menu_advert.decode('utf-8', 'replace')
         y, x = self.display_menu_advert_at()
