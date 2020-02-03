@@ -23,6 +23,7 @@ piptui
 * Install package: `Ctrl-A`
 * Uninstall package: `Ctrl-R`
 * Update package: `Ctrl-U`
+* Search package: `Ctrl-S`
 * Open in browser: `Ctrl-O`
 * Open HomePage: `Ctrl-H`
 * Show Package Details: `Ctrl-D`
