@@ -3,10 +3,6 @@ from piptui import __version__
 from pathlib import Path
 import distutils.core
 import os
-
-requirements = ['npyscreen @ https://github.com/npcole/npyscreen', 'requests', 'windows-curses; sys_platform == "win32"']
-
-
 def setup(**attrs):
         HOME_DIR = str(Path.home())
         PIPTUI_DIR = HOME_DIR + '/.piptui/'
@@ -46,7 +42,7 @@ def main():
                         'Programming Language :: Python :: 3.7'
                 ],
                 keywords='pip, npyscreen, pip-gui',
-                install_requires=requirements,
+                install_requires=['npyscreen', 'requests', 'windows-curses; sys_platform == "win32"'],
                 entry_points={'console_scripts': ['piptui = piptui.app:main']},
         )
 
